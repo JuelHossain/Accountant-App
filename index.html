@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accountant</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Accountant</h1>
+    <main class="container">
+      <section id="banner-img">
+        <img src="banner.jpg" alt="this is the Accountant banner image" />
+      </section>
+      <section id="calculation">
+        <h2>Income</h2>
+        <div class="input">
+          <label for="total-income">Income:</label>
+          <input type="number" id="income" placeholder="Total Income here" />
+        </div>
+        <h2>Expenses</h2>
+        <div class="input">
+          <label for="total-income">Food:</label>
+          <input type="number" id="food" placeholder="Food Expenses Here" />
+        </div>
+        <div class="input">
+          <label for="total-income">Rent:</label>
+          <input type="number" id="rent" placeholder="Rent Expenses Here" />
+        </div>
+        <div class="input">
+          <label for="total-income">Clothes:</label>
+          <input
+            type="number"
+            id="clothes"
+            placeholder="Clothes Expenses Here"
+          />
+        </div>
+
+        <div class="btn"><button id="calculate-btn">Calculate</button></div>
+        <h2>Total Expenses: <span id="expenses"></span></h2>
+        <h2>Balances: <span id="balances"></span></h2>
+          <div class="input">
+            <label for="input-for-save">Save:</label>
+            <input type="number" id="input-for-save" /><span>%</span>
+            <button id="save-btn">Save</button>
+          </div>
+          <h2>Saving Amount: <span id="expenses"></span></h2>
+          <h2>Remaining Balances: <span id="remaining-balances"></span></h2>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
