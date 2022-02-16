@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -43,17 +45,18 @@ section {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    margin: 20px auto;
 }
 .input .input-field {
     position: relative;
     flex-basis: 75%;
     text-align: end;
+    padding: 13px 0;
 }
 .input input {
     padding: 10px;
-    background-color: rgb(211, 215, 220);
+    background-color: rgb(233, 227, 227);
     width: 100%;
+    border-radius: 5px;
     
 }
 .input label {
@@ -72,9 +75,18 @@ button {
 .btn {
     text-align: center;
 }
+#save-btn {
+    margin: 0;
+}
 .error {
-    display: inline;
+    display: none;
     position: absolute;
-    right:0;
+    right: 3%;
+    top: 0;
     color: red;
+    border: 1px solid red;
+    background-color:rgb(233, 227, 227);
+    padding: 3px;
+    font-size: 14px;
+    
 }
