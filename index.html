@@ -8,47 +8,111 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- heading  -->
     <h1>Accountant</h1>
+    <!-- main body start here  -->
     <main class="container">
+
+      <!-- image section  start-->
       <section id="banner-img">
         <img src="banner.jpg" alt="this is the Accountant banner image" />
       </section>
-      <section id="calculation">
-        <h2>Income</h2>
-        <div class="input">
-          <label for="total-income">Income:</label>
-          <input type="number" id="income" placeholder="Total Income here" />
-        </div>
-        <h2>Expenses</h2>
-        <div class="input">
-          <label for="total-income">Food:</label>
-          <input type="number" id="food" placeholder="Food Expenses Here" />
-        </div>
-        <div class="input">
-          <label for="total-income">Rent:</label>
-          <input type="number" id="rent" placeholder="Rent Expenses Here" />
-        </div>
-        <div class="input">
-          <label for="total-income">Clothes:</label>
-          <input
-            type="number"
-            id="clothes"
-            placeholder="Clothes Expenses Here"
-          />
-        </div>
+      <!-- image section end  -->
 
+<!-- calculation section start  -->
+      <section id="calculation">
+        <!-- income input field  -->
+        <!-- heading  -->
+        <h2>Income</h2>
+        <!-- input div  -->
+        <div class="input">
+          <!-- label  -->
+          <label for="income">Income:</label>
+          <!-- input field div  -->
+          <div class="input-field">
+            <!-- input data field  -->
+              <input type="number" id="income" placeholder="Total Income here" />
+              <!-- errror field  -->
+              <span id="errorincome" class="error">this is a error massage</span>
+          </div>
+        </div>
+        <!-- income input field ended  -->
+
+        <!-- expenses input fields start here  -->
+        <!-- heading  -->
+        <h2>Expenses</h2>
+        <!-- food input field div -->
+        <div class="input" id="foodbox">
+          <!-- label  -->
+          <label for="total-income">Food:</label>
+          <!-- input field div  -->
+          <div class="input-field">
+            <!-- input data field  -->
+            <input type="number" id="food" placeholder="Food Expenses Here" />
+            <!-- error  -->
+            <span id="errorfood" class="error">this is a error massage</span>
+          </div>
+        </div>
+         <!-- rent input field div  -->
+        <div class="input"id="rentbox">
+          <!-- label -->
+          <label for="total-income">Rent:</label>
+          <!-- input field div  -->
+          <div class="input-field">
+            <!-- input data field  -->
+          <input type="number" id="rent" placeholder="Rent Expenses Here" />
+          <!-- error field  -->
+          <span id="errorrent" class="error">this is a error massage</span>
+          </div>
+        </div>
+        <!-- clothes input field  -->
+        <div class="input" id="clothesbox">
+          <!-- label  -->
+          <label for="total-income">Clothes:</label>
+          <!-- input field div  -->
+          <div class="input-field">
+            <!-- input data field  -->
+          <input type="number" id="clothes" placeholder="Clothes Expenses Here" />
+          <!-- error  -->
+          <span id="errorclothes" class="error">this is a error massage</span>
+          </div>
+        </div>
+<!-- expenses section ended here  -->
+
+<!-- calculation button  -->
         <div class="btn"><button id="calculate-btn">Calculate</button></div>
+        <!-- expenses output  -->
         <h2>Total Expenses: <span id="expenses"></span></h2>
+        <!-- balance remaining after cutting the expenses  -->
         <h2>Balances: <span id="balances"></span></h2>
-          <div class="input">
+
+        
+<!-- save section start here  -->
+          <div class="input"id="savebox">
+            <!-- label  -->
             <label for="input-for-save">Save:</label>
-            <input type="number" id="input-for-save" /><span>%</span>
+            <!-- input field div  -->
+            <div class="input-field">
+              <!-- input data field  -->
+              <input type="number" id="input-for-save" />
+              <!-- error field -->
+              <span id="errorsave" class="error">this is a error massage</span>
+            </div>
+            <!-- percent symbol  -->
+            <span>%</span>
+            <!-- save button  -->
             <button id="save-btn">Save</button>
           </div>
+          <!-- saving ammount output  -->
           <h2>Saving Amount: <span id="expenses"></span></h2>
+          <!-- remaining balances output  -->
           <h2>Remaining Balances: <span id="remaining-balances"></span></h2>
         </div>
+  <!-- save section ended here  -->
       </section>
+      <!-- calculation section ended here  -->
     </main>
+    <!-- main body ended here  -->
+    <script src="master.js"></script>
   </body>
 </html>

@@ -45,10 +45,15 @@ section {
     gap: 15px;
     margin: 20px auto;
 }
-.input input {
+.input .input-field {
+    position: relative;
     flex-basis: 75%;
+    text-align: end;
+}
+.input input {
     padding: 10px;
     background-color: rgb(211, 215, 220);
+    width: 100%;
     
 }
 .input label {
@@ -67,4 +72,9 @@ button {
 .btn {
     text-align: center;
 }
-
+.error {
+    display: inline;
+    position: absolute;
+    right:0;
+    color: red;
+}
