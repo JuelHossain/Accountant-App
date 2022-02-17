@@ -70,19 +70,19 @@ function removeError(inputField, errorField) {
         errorField.style.display = 'none';
         errorField.innerText = ""
 }
-
 // event handling start here 
 incomeInput.addEventListener('input', function () {
     if (incomeInput.value < 0) {
-        showError(incomeInput, errorIncome, "You don't have enough income");
+        showError(incomeInput, errorIncome, "So You lost your Job?");
         incomeInput.value = "";
     } else {
         removeError(incomeInput, errorIncome);
+        removeError(saveInput, errorSave);
     }
 });
 foodInput.addEventListener('input', function () {
     if (foodInput.value < 0) {
-        showError(foodInput, errorFood, 'no food expenses');
+        showError(foodInput, errorFood, "Don't you eat food?");
         foodInput.value = "";
     } else {
         removeError(foodInput, errorFood);
@@ -90,7 +90,7 @@ foodInput.addEventListener('input', function () {
 });
 rentInput.addEventListener('input', function () {
     if (rentInput.value < 0) {
-        showError(rentInput, errorRent, 'no rent has been given');
+        showError(rentInput, errorRent, 'Did You gave Your rent?');
         rentInput.value = "";
     } else {
         removeError(rentInput, errorRent);
@@ -98,7 +98,7 @@ rentInput.addEventListener('input', function () {
 });
 clothesInput.addEventListener('input', function () {
     if (clothesInput.value < 0) {
-        showError(clothesInput, errorClothes, 'no rent has been given');
+        showError(clothesInput, errorClothes, 'buy some clothes please!');
         clothesInput.value = "";
     } else {
         removeError(clothesInput, errorClothes);
@@ -106,7 +106,7 @@ clothesInput.addEventListener('input', function () {
 });
 saveInput.addEventListener('input', function () {
     if (saveInput.value < 0) {
-        showError(saveInput, errorSave, 'invalid');
+        showError(saveInput, errorSave, 'I Hate Negative');
         saveInput.value = "";
     } else {
         removeError(saveInput, errorSave);
@@ -115,7 +115,7 @@ saveInput.addEventListener('input', function () {
 calculateButton.addEventListener("click", function () {
 
     if (income() == "") {
-        showError(incomeInput, errorIncome, "This field cannot be empty");
+        showError(incomeInput, errorIncome, "Not enough income");
         output(expensesOutput, "");
         output(balancesOutput, "");
     } else if (expenses() > income()) {
@@ -129,15 +129,15 @@ calculateButton.addEventListener("click", function () {
 });
 saveButton.addEventListener("click", function () {
     if (income() == "") {
-        showError(saveInput, errorSave, "not Enough Income");
+        showError(saveInput, errorSave, "Not enough Income");
         output(savingAmountOutput, "");
         output(remainingBalanceOutput, "");
     } else if (saveInput.value == "") {
-        showError(saveInput, errorSave, "need percentage");
+        showError(saveInput, errorSave, "Need Percentage");
         output(savingAmountOutput, "");
         output(remainingBalanceOutput, "");
     }else if (savingAmount()>balances()) {
-        showError(saveInput, errorSave, "not Enough Balances");
+        showError(saveInput, errorSave, "Not enough Balances");
         output(savingAmountOutput, "");
         output(remainingBalanceOutput, "");
     } else {
