@@ -88,5 +88,8 @@ button {
     background-color:rgb(233, 227, 227);
     padding: 3px;
     font-size: 14px;
-    
+    border-radius: 5px;
+}
+.input input:focus > .error{
+display: none;
 }
