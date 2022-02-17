@@ -1,20 +1,20 @@
 //making document.querySelector shorter with the help of function.
 function $(selector) { return document.querySelector(selector) } 
 
-// main section input
+// main section input field
 const incomeInput = $("#income");
 const foodInput = $("#food");
 const rentInput = $("#rent");
 const clothesInput = $("#clothes");
 
-// output 
+// output field
 const expensesOutput = $("#expenses");
 const balancesOutput = $("#balances");
 
-//save section input
+//save section input field.
 const saveInput = $("#save");
 
-// output 
+// output field
 const savingAmountOutput = $("#saving-amount");
 const remainingBalanceOutput = $("#remaining-balances");
 
@@ -29,18 +29,32 @@ const errorRent = $("#errorrent");
 const errorClothes = $("#errorclothes");
 const errorSave = $("#errorsave");
 
+// this function returns total income.
 function income() {
     return +incomeInput.value;
 }
+// this function returns total expenses.
 function expenses() {
     let food = +foodInput.value;
     let rent = +rentInput.value;
     let clothes = +clothesInput.value;
     return food + rent + clothes;
 }
+// this function returns balances after cutting the expenses.
 function balances() {
     return income() - expenses();
 }
+// this function returns total saving ammount from total income.
+function savingAmount() {
+    let save = +saveInput.value;
+    let income = +incomeInput.value;
+    return (income / 100) * save;
+}
+// this function returns remaining balances after cuttin the saving amount
+function remainingBalances() {
+    return balances() - savingAmount();
+}
+//this function is about pushing calculated data into output field.
 function output(field,inner) {
     return field.innerText = inner;
 }
@@ -56,6 +70,8 @@ function removeError(inputField, errorField) {
         errorField.style.display = 'none';
         errorField.innerText = ""
 }
+
+// event handling start here 
 incomeInput.addEventListener('input', function () {
     if (incomeInput.value < 0) {
         showError(incomeInput, errorIncome, "You don't have enough income");
@@ -65,28 +81,28 @@ incomeInput.addEventListener('input', function () {
     }
 });
 foodInput.addEventListener('input', function () {
-        if (foodInput.value < 0) {
-            showError(foodInput, errorFood, 'no food expenses');
-            foodInput.value = "";
-        } else {
-            removeError(foodInput, errorFood);
-        }
-    });
+    if (foodInput.value < 0) {
+        showError(foodInput, errorFood, 'no food expenses');
+        foodInput.value = "";
+    } else {
+        removeError(foodInput, errorFood);
+    }
+});
 rentInput.addEventListener('input', function () {
-            if (rentInput.value < 0) {
-                showError(rentInput, errorRent, 'no rent has been given');
-                rentInput.value = "";
-            } else {
-                removeError(rentInput, errorRent);
-            }
-        });
+    if (rentInput.value < 0) {
+        showError(rentInput, errorRent, 'no rent has been given');
+        rentInput.value = "";
+    } else {
+        removeError(rentInput, errorRent);
+    }
+});
 clothesInput.addEventListener('input', function () {
-            if (clothesInput.value < 0) {
-                showError(clothesInput, errorClothes, 'no rent has been given');
-                clothesInput.value = "";
-            } else {
-                removeError(clothesInput, errorClothes);
-            }
+    if (clothesInput.value < 0) {
+        showError(clothesInput, errorClothes, 'no rent has been given');
+        clothesInput.value = "";
+    } else {
+        removeError(clothesInput, errorClothes);
+    }
 });
 saveInput.addEventListener('input', function () {
     if (saveInput.value < 0) {
@@ -94,9 +110,8 @@ saveInput.addEventListener('input', function () {
         saveInput.value = "";
     } else {
         removeError(saveInput, errorSave);
-            }
-        })
-
+    }
+});
 calculateButton.addEventListener("click", function () {
 
     if (income() == "") {
@@ -112,14 +127,6 @@ calculateButton.addEventListener("click", function () {
         output(expensesOutput, expenses());
     }
 });
-function savingAmount() {
-    let save = +saveInput.value;
-    let income = +incomeInput.value;
-    return (income / 100) * save;
-}
-function remainingBalances() {
-    return balances() - savingAmount();
-}
 saveButton.addEventListener("click", function () {
     if (income() == "") {
         showError(saveInput, errorSave, "not Enough Income");
@@ -138,3 +145,6 @@ saveButton.addEventListener("click", function () {
         output(remainingBalanceOutput, remainingBalances());
     }
 });
+
+// this project is ended here
+// thanks.
